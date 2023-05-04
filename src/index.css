@@ -351,8 +351,8 @@ Sidebar
   height: 100%;
   background: var(--white);
   /* toggle */
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
 }
 .show-sidebar {
   opacity: 1;

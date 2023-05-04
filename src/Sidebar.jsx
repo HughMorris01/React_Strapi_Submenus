@@ -1,18 +1,40 @@
 import { FaTimes } from 'react-icons/fa';
 import { useGlobalContext } from './context';
+import sublinks from './data';
 
 const Sidebar = () => {
-  const { closeSidebar } = useGlobalContext();
+  const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
   return (
-    <div>
-      <div className="sidebar-header">
+    <aside className="sidebar">
+      <div className="sidebar-container">
         <h3>Strapi Menu</h3>
-        <button type="button" onClick={closeSidebar}>
+        <button type="button" className="close-btn" onClick={closeSidebar}>
           <FaTimes />
         </button>
+        <div className="sidebar-links">
+          {sublinks.map((item) => {
+            const { links, page, pageId } = item;
+            return (
+              <article key={pageId}>
+                <h4>{page}</h4>
+                <div className="sidebar-sublinks">
+                  {links.map((link) => {
+                    const { url, icon, label, id } = link;
+                    return (
+                      <a key={id} href={url}>
+                        {icon}
+                        {label}
+                      </a>
+                    );
+                  })}
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </aside>
   );
 };
 export default Sidebar;
