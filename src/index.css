@@ -284,6 +284,7 @@ nav {
   color: var(--white);
   letter-spacing: 3px;
   font-weight: 700;
+  margin-left: 2rem;
 }
 .toggle-btn {
   width: 2rem;
@@ -351,8 +352,9 @@ Sidebar
   height: 100%;
   background: var(--white);
   /* toggle */
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
 }
 .show-sidebar {
   opacity: 1;

@@ -6,7 +6,7 @@ const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
   return (
-    <aside className="sidebar">
+    <aside className={isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}>
       <div className="sidebar-container">
         <h3>Strapi Menu</h3>
         <button type="button" className="close-btn" onClick={closeSidebar}>
