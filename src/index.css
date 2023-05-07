@@ -269,8 +269,8 @@ Navbar
 nav {
   height: 5rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .nav-center {
   width: var(--fluid-width);
@@ -284,7 +284,6 @@ nav {
   color: var(--white);
   letter-spacing: 3px;
   font-weight: 700;
-  margin-left: 2rem;
 }
 .toggle-btn {
   width: 2rem;
