@@ -3,12 +3,18 @@ import { useGlobalContext } from './context';
 import Navlinks from './Navlinks';
 
 const Navbar = () => {
-  const { openSidebar } = useGlobalContext();
+  const { openSidebar, setPageId } = useGlobalContext();
+  const handleSubmenu = (e) => {
+    if (!e.target.classList.contains('nav-link')) {
+      setPageId(null);
+    }
+  };
+
   return (
-    <nav>
-      <div className="nav-center">
-        <h3 className="logo">Strapi Menu</h3>
-        <button className="toggle-btn" onClick={openSidebar}>
+    <nav onMouseOver={handleSubmenu}>
+      <div className='nav-center'>
+        <h3 className='logo'>Strapi Menu</h3>
+        <button className='toggle-btn' onClick={openSidebar}>
           <FaBars />
         </button>
         <Navlinks />
