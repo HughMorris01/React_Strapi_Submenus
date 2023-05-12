@@ -7,18 +7,17 @@ const Sidebar = () => {
 
   return (
     <aside className={isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}>
-      <div className="sidebar-container">
-        <h3>Strapi Menu</h3>
-        <button type="button" className="close-btn" onClick={closeSidebar}>
+      <div className='sidebar-container'>
+        <button type='button' className='close-btn' onClick={closeSidebar}>
           <FaTimes />
         </button>
-        <div className="sidebar-links">
+        <div className='sidebar-links'>
           {sublinks.map((item) => {
             const { links, page, pageId } = item;
             return (
               <article key={pageId}>
                 <h4>{page}</h4>
-                <div className="sidebar-sublinks">
+                <div className='sidebar-sublinks'>
                   {links.map((link) => {
                     const { url, icon, label, id } = link;
                     return (
